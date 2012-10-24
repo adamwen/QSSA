@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome to QCSA{% endblock %}
+
+
+{% block maintain %}
+	<div class = 'span4'>
+		<h2>青大课程同步助手</h2>
+		<p>Qingdao University Curriculum Sync Assistant</p>
+                <p><a data-toggle="modal" href="#myModal" class="btn btn-primary btn-large">使用说明</a></p>
+                <div class="alert alert-error">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <p>点击提交后请等待一段时间</p>
+                    <p>请勿重复点击提交</p>
+                </div>
+	</div>
+        <div class = 'span'>
+            <form class="form-horizontal" action="/submit" method="post">{% csrf_token %}
+                <div class="control-group">
+                    <label class="control-label" for="inputEmail">教务系统学号</label>
+                    <div class="controls">
+                        <input type="text" id="inputSchoolNum" placeholder="学号" name='schoolNum'>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="inputPassword">教务密码</label>
+                    <div class="controls">
+                        <input type="password" id="inputPassword" placeholder="教务密码" name='schoolpasswd'>
+                    </div>
+                </div>
+
+                <div class="control-group"> <label class="control-label" for="inputEmail">Gmail邮箱地址</label>
+                    <div class="controls">
+                        <input type="text" id="inputEmail" placeholder="例: example@gmail.com" name='email'>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="inputPassword">Gmail密码</label>
+                    <div class="controls">
+                        <input type="password" id="inputPassword" placeholder="Gmail邮箱密码" name='password'>
+                    </div>
+                </div>
+
+		<div class="control-group">
+                    <div class="controls">
+                        <button type="submit button" class="btn" >提交</button>
+                    </div>
+                </div>
+            </form>	
+
+	</div>
+{% endblock %}
+
+{% block head %}
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3 id="myModalLabel">使用说明</h3>
+        </div>
+        
+        <div class="modal-body">
+
+            <h5>STEP1:</h5>
+            <p>输入你的学号、密码、gmail邮箱地址、gmail，点击提交(<a href="http://www.gmail.com">没有gmail?点此前往注册</a>)</p>
+            <div class="alert alert-error">
+               <p>点击提交后请等待一段时间 请勿重复点击提交</p>
+            </div>
+
+
+            <h5>STEP2:</h5>
+            <p>前往google日历查看   <a href="http://www.google.com/calendar/">点此前往google日历</a>
+            <p>你将会看到你的新学期课程 从开学第1周至18周 自动区分单双周</p>
+
+            <h5>STEP3:</h5>
+            <p>将google日历与你的android/ios等移动设备同步 随身携带你的课程表</p>
+
+            </br>
+            </br>
+            <h5>关于如何清空google日历</h5>
+            <p>进入google日历，最左侧一栏，找到我的日历，右边有个三角图标</p>
+            <p>点进进入设置</p>
+            <p>点击删除</p>
+        </div>
+        
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal">关闭</button>
+        </div>
+    </div>
+
+<div class="bs-docs-example" style="padding-bottom: 24px;">
+</div>
+{% endblock %}

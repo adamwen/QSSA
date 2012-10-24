@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome to QSSA{% endblock %}
+
+{% block menu %}<li class="active"><a href="#">首页</a></li>
+               <li><a href="#about">About</a></li>
+{% endblock %}
+
+{% block maintain %}
+	<div class = 'span4'>
+		<h2>青大课程同步助手</h2>
+		<p>The Qingdao University Schedule Sync Assistant</p>
+	</div>
+        <div class = 'span'>
+            <form class="form-horizontal">
+                <div class="control-group">
+                    <label class="control-label" for="inputEmail">教务系统学号</label>
+                    <div class="controls">
+                        <input type="text" id="inputSchoolNum" placeholder="SchoolNum">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="inputPassword">教务密码</label>
+                    <div class="controls">
+                        <input type="password" id="inputPassword" placeholder="Password">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="inputEmail">Gmail邮箱地址</label>
+                    <div class="controls">
+                        <input type="password" id="inputEmail" placeholder="Email">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="inputPassword">Gmail密码</label>
+                    <div class="controls">
+                        <input type="password" id="inputPassword" placeholder="Password">
+                    </div>
+                </div>
+
+		<div class="control-group">
+                    <div class="controls">
+                        <button type="submit" class="btn">Sign in</button>
+                    </div>
+                </div>
+            </form>	
+
+	</div>
+{% endblock %}
+
